@@ -1,0 +1,6 @@
+{
+  "rootDirectory": "my-simple-app",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs"
+}
