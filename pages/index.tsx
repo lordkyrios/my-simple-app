@@ -1,8 +1,9 @@
 // pages/index.tsx
+import Head from "next/head";
 import Link from "next/link";
-import { Button } from "@/components/Button";
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { Button } from "@/components/Button";
 
 export default function HomePage() {
   const [plan, setPlan] = useState<"monthly" | "yearly">("monthly");
@@ -14,6 +15,17 @@ export default function HomePage() {
 
   return (
     <main className="bg-gradient-to-b from-white to-gray-50 py-16 px-4 min-h-screen">
+      <Head>
+        <title>Faith-Based AI Video Studio | Create Bible Storyboards, Motion Videos & More</title>
+        <meta name="description" content="Create stunning Bible-inspired storyboards, motion videos, and AI-powered visuals. Perfect for churches, ministries, and Christian creators." />
+        <meta name="keywords" content="AI video for churches, Bible storyboard generator, Christian video maker, motion faith videos, scripture animation, sermon visualizer, AI narrator, YouTube Bible video tool" />
+        <meta property="og:title" content="Faith-Based AI Video Studio" />
+        <meta property="og:description" content="Transform your message into cinematic, faith-driven visuals using AI." />
+        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:type" content="website" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+
       <motion.div
         className="max-w-6xl mx-auto text-center"
         initial={{ opacity: 0, y: 40 }}
@@ -101,7 +113,7 @@ export default function HomePage() {
           </div>
           <div className="bg-white shadow-md p-6 rounded-xl max-w-md mx-auto">
             <h3 className="text-2xl font-bold mb-2">
-              {plan === "monthly" ? "$19/month" : "$171/year"}
+              {plan === "monthly" ? "$49/month" : "$588/year"}
             </h3>
             <p className="text-sm text-gray-600 mb-4">
               Unlimited projects, narration, motion AI, and support.
