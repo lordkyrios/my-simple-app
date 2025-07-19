@@ -1,5 +1,6 @@
+// pages/index.tsx
 import Link from "next/link";
-import { Button } from "@/components.Button";
+import { Button } from "@/components/Button";
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
@@ -164,10 +165,4 @@ function TestimonialCard({ quote, name }: { quote: string; name: string }) {
       <p className="font-semibold text-gray-900">— {name}</p>
     </motion.div>
   );
-}
-
-export async function getServerSideProps() {
-  return {
-    props: {}, // You can pass dynamic data here
-  };
 }
