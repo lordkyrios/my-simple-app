@@ -19,6 +19,7 @@
   "devDependencies": {
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.35",
+    "eslint": "^9.31.0",
     "typescript": "^5.4.5"
   }
 }
