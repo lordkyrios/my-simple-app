@@ -1,59 +1,39 @@
-/src/components/LandingPage.tsx
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
 
-export default function HomePage() {
+export default function LandingPage() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center px-4 bg-gradient-to-br from-slate-50 to-slate-100">
-      <div className="text-center max-w-2xl">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-          Welcome to <span className="text-blue-600">YourApp</span>
+    <main className="min-h-screen bg-gradient-to-b from-white to-gray-100 py-16 px-4">
+      <section className="max-w-6xl mx-auto text-center">
+        <h1 className="text-5xl font-bold text-gray-800 mb-6">
+          🎬 Faith-Based AI Video Studio
         </h1>
-        <p className="text-lg text-slate-600 mb-6">
-          Build beautiful, fast, and modern apps with ease. Start crafting your next big idea today.
+        <p className="text-gray-600 text-lg mb-8">
+          Create stunning Bible-inspired storyboards, motion videos, and AI-powered scenes—all in one platform.
         </p>
-        <div className="flex justify-center gap-4">
-          <Button size="lg" className="px-6">
-            Get Started
-          </Button>
-          <Button variant="outline" size="lg" className="px-6">
-            Learn More
-          </Button>
-        </div>
-      </div>
+        <Button>Get Started</Button>
+      </section>
 
-      <section className="mt-20 w-full max-w-5xl px-4 grid gap-6 md:grid-cols-3">
-        {features.map((feature) => (
-          <Card key={feature.title} className="rounded-2xl shadow-md hover:shadow-lg transition-all">
-            <CardContent className="p-6">
-              <feature.icon className="w-8 h-8 text-blue-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground">{feature.description}</p>
-            </CardContent>
-          </Card>
-        ))}
+      <section className="max-w-4xl mx-auto mt-20 grid gap-6 md:grid-cols-2">
+        <Card>
+          <CardContent>
+            <h2 className="text-xl font-semibold text-gray-700 mb-2">📜 Script to Storyboard</h2>
+            <p className="text-gray-600">
+              Convert your message into cinematic, Bible-based visuals in minutes.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent>
+            <h2 className="text-xl font-semibold text-gray-700 mb-2">🎙️ Voice & Music Sync</h2>
+            <p className="text-gray-600">
+              Automatically generate AI voiceovers and music that match your message.
+            </p>
+          </CardContent>
+        </Card>
       </section>
     </main>
   );
 }
-
-const features = [
-  {
-    title: "Component-First Design",
-    description: "Reusable UI components built for speed and consistency.",
-    icon: ArrowRight,
-  },
-  {
-    title: "TypeScript Support",
-    description: "Robust typing and autocompletion to prevent runtime bugs.",
-    icon: ArrowRight,
-  },
-  {
-    title: "Tailwind + shadcn/ui",
-    description: "Fully responsive design system with modern utilities.",
-    icon: ArrowRight,
-  },
-];
-
