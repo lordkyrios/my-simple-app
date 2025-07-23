@@ -1,6 +1,5 @@
 // pages/index.tsx
 import Link from "next/link";
-import { Button } from "@/components/Button";
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 

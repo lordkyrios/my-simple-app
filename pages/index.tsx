@@ -1,9 +1,8 @@
 // pages/index.tsx
-import Head from "next/head";
 import Link from "next/link";
+import { Button } from "../components/Button";
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { Button } from "@/components/Button";
 
 export default function HomePage() {
   const [plan, setPlan] = useState<"monthly" | "yearly">("monthly");
@@ -15,17 +14,6 @@ export default function HomePage() {
 
   return (
     <main className="bg-gradient-to-b from-white to-gray-50 py-16 px-4 min-h-screen">
-      <Head>
-        <title>Faith-Based AI Video Studio | Create Bible Storyboards, Motion Videos & More</title>
-        <meta name="description" content="Create stunning Bible-inspired storyboards, motion videos, and AI-powered visuals. Perfect for churches, ministries, and Christian creators." />
-        <meta name="keywords" content="AI video for churches, Bible storyboard generator, Christian video maker, motion faith videos, scripture animation, sermon visualizer, AI narrator, YouTube Bible video tool" />
-        <meta property="og:title" content="Faith-Based AI Video Studio" />
-        <meta property="og:description" content="Transform your message into cinematic, faith-driven visuals using AI." />
-        <meta property="og:image" content="/og-image.png" />
-        <meta property="og:type" content="website" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-
       <motion.div
         className="max-w-6xl mx-auto text-center"
         initial={{ opacity: 0, y: 40 }}
@@ -39,36 +27,12 @@ export default function HomePage() {
         </p>
 
         <div className="grid md:grid-cols-3 gap-6">
-          <FeatureCard
-            title="📜 Script to Storyboard"
-            description="Convert your message into cinematic scenes."
-            href="/generate"
-          />
-          <FeatureCard
-            title="📽️ Motion Image Generator"
-            description="Upload an image and turn it into video magic."
-            href="/motion"
-          />
-          <FeatureCard
-            title="🎞️ YouTube Concept Copywriter"
-            description="Paste a YouTube link and generate a unique version."
-            href="/youtube-copywriter"
-          />
-          <FeatureCard
-            title="🎤 AI Voice Narration"
-            description="Auto-generate professional narration from your script."
-            href="/voice"
-          />
-          <FeatureCard
-            title="🎼 Music Matching"
-            description="Match perfect music tracks to mood and tone."
-            href="/music"
-          />
-          <FeatureCard
-            title="📂 Project Dashboard"
-            description="Save, organize and edit all your video drafts."
-            href="/dashboard"
-          />
+          <FeatureCard title="📜 Script to Storyboard" description="Convert your message into cinematic scenes." href="/generate" />
+          <FeatureCard title="📽️ Motion Image Generator" description="Upload an image and turn it into video magic." href="/motion" />
+          <FeatureCard title="🎞️ YouTube Concept Copywriter" description="Paste a YouTube link and generate a unique version." href="/youtube-copywriter" />
+          <FeatureCard title="🎤 AI Voice Narration" description="Auto-generate professional narration from your script." href="/voice" />
+          <FeatureCard title="🎼 Music Matching" description="Match perfect music tracks to mood and tone." href="/music" />
+          <FeatureCard title="📂 Project Dashboard" description="Save, organize and edit all your video drafts." href="/dashboard" />
         </div>
 
         <div className="mt-14">
@@ -80,44 +44,21 @@ export default function HomePage() {
         <section className="mt-20">
           <h2 className="text-3xl font-bold mb-6">✨ Why Creators Love Us</h2>
           <div className="grid md:grid-cols-3 gap-6 text-left">
-            <TestimonialCard
-              quote="I created a full trailer for my youth ministry in minutes. Life-changing tool!"
-              name="Pastor Daniel"
-            />
-            <TestimonialCard
-              quote="This platform gave me everything I needed to bring my vision to life."
-              name="Ava, Content Creator"
-            />
-            <TestimonialCard
-              quote="Faith-based video tools like this just didn’t exist before."
-              name="Lucas, Film Student"
-            />
+            <TestimonialCard quote="I created a full trailer for my youth ministry in minutes. Life-changing tool!" name="Pastor Daniel" />
+            <TestimonialCard quote="This platform gave me everything I needed to bring my vision to life." name="Ava, Content Creator" />
+            <TestimonialCard quote="Faith-based video tools like this just didn’t exist before." name="Lucas, Film Student" />
           </div>
         </section>
 
         <section className="mt-20">
           <h2 className="text-3xl font-bold mb-4">💳 Simple Pricing</h2>
           <div className="flex justify-center space-x-4 mb-6">
-            <Button
-              onClick={() => setPlan("monthly")}
-              variant={plan === "monthly" ? "default" : "outline"}
-            >
-              Monthly
-            </Button>
-            <Button
-              onClick={() => setPlan("yearly")}
-              variant={plan === "yearly" ? "default" : "outline"}
-            >
-              Yearly (Save 25%)
-            </Button>
+            <Button onClick={() => setPlan("monthly")} variant={plan === "monthly" ? "default" : "outline"}>Monthly</Button>
+            <Button onClick={() => setPlan("yearly")} variant={plan === "yearly" ? "default" : "outline"}>Yearly (Save 25%)</Button>
           </div>
           <div className="bg-white shadow-md p-6 rounded-xl max-w-md mx-auto">
-            <h3 className="text-2xl font-bold mb-2">
-              {plan === "monthly" ? "$49/month" : "$588/year"}
-            </h3>
-            <p className="text-sm text-gray-600 mb-4">
-              Unlimited projects, narration, motion AI, and support.
-            </p>
+            <h3 className="text-2xl font-bold mb-2">{plan === "monthly" ? "$49/month" : "$588/year"}</h3>
+            <p className="text-sm text-gray-600 mb-4">Unlimited projects, narration, motion AI, and support.</p>
             <Button className="w-full">Subscribe Now</Button>
           </div>
         </section>
@@ -141,15 +82,7 @@ export default function HomePage() {
   );
 }
 
-function FeatureCard({
-  title,
-  description,
-  href,
-}: {
-  title: string;
-  description: string;
-  href: string;
-}) {
+function FeatureCard({ title, description, href }: { title: string; description: string; href: string }) {
   return (
     <Link href={href}>
       <motion.div
