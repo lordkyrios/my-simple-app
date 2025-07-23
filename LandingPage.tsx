@@ -1,4 +1,7 @@
+// pages/LandingPage.tsx
 import React from "react";
+import { Button } from "../components/Button";
+import { Card, CardContent } from "../components/Card";
 
 export default function LandingPage() {
   return (
