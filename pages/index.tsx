@@ -28,7 +28,7 @@ export default function HomePage() {
         <div className="mt-14">
           <Link href="/generate">
             <a>
-              <button className="text-lg px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl">
+              <button className="text-lg px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
                 Start Creating
               </button>
             </a>
