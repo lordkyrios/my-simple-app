@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Button } from "../components/Button";
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-gray-100 py-16 px-4">
