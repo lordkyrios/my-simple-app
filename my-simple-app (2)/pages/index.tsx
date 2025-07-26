@@ -28,9 +28,7 @@ export default function HomePage() {
         <div className="mt-14">
           <Link href="/generate">
             <a>
-              <button className="text-lg px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
                 Start Creating
-              </button>
             </a>
           </Link>
         </div>
@@ -38,25 +36,19 @@ export default function HomePage() {
         <section className="mt-20">
           <h2 className="text-3xl font-bold mb-4">💳 Simple Pricing</h2>
           <div className="flex justify-center space-x-4 mb-6">
-            <button
               className={`px-6 py-2 rounded-xl border ${plan === "monthly" ? "bg-blue-600 text-white" : "bg-white text-gray-700"}`}
               onClick={() => setPlan("monthly")}
             >
               Monthly
-            </button>
-            <button
               className={`px-6 py-2 rounded-xl border ${plan === "yearly" ? "bg-blue-600 text-white" : "bg-white text-gray-700"}`}
               onClick={() => setPlan("yearly")}
             >
               Yearly (Save 25%)
-            </button>
           </div>
           <div className="bg-white shadow-md p-6 rounded-xl max-w-md mx-auto">
             <h3 className="text-2xl font-bold mb-2">{plan === "monthly" ? "$49/month" : "$588/year"}</h3>
             <p className="text-sm text-gray-600 mb-4">Unlimited projects, narration, motion AI, and support.</p>
-            <button className="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700">
               Subscribe Now
-            </button>
           </div>
         </section>
       </motion.div>
