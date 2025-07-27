@@ -1,57 +1,33 @@
-// pages/index.tsx
-import Link from "next/link";
-import { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import NavBar from '@/components/NavBar';
+import Footer from '@/components/Footer';
+import Head from 'next/head';
 
-export default function HomePage() {
-  const [plan, setPlan] = useState<"monthly" | "yearly">("monthly");
-  const controls = useAnimation();
-
-  useEffect(() => {
-    controls.start({ opacity: 1, y: 0, transition: { duration: 0.6 } });
-  }, [controls]);
-
+export default function Home() {
   return (
-    <main className="bg-gradient-to-b from-white to-gray-50 py-16 px-4 min-h-screen">
-      <motion.div
-        className="max-w-6xl mx-auto text-center"
-        initial={{ opacity: 0, y: 40 }}
-        animate={controls}
-      >
-        <h1 className="text-5xl font-bold text-gray-800 mb-6">
-          🎬 Faith-Based AI Video Studio
-        </h1>
-        <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-10">
-          Create stunning Bible-inspired storyboards, motion videos, and AI-powered scenes—all in one platform.
-        </p>
+    <>
+      <Head>
+        <title>My Simple App</title>
+        <meta name="description" content="Professional SaaS landing page" />
+      </Head>
 
-        <div className="mt-14">
-          <Link href="/generate">
-            <a>
-                Start Creating
-            </a>
-          </Link>
-        </div>
+      <NavBar />
 
-        <section className="mt-20">
-          <h2 className="text-3xl font-bold mb-4">💳 Simple Pricing</h2>
-          <div className="flex justify-center space-x-4 mb-6">
-              className={`px-6 py-2 rounded-xl border ${plan === "monthly" ? "bg-blue-600 text-white" : "bg-white text-gray-700"}`}
-              onClick={() => setPlan("monthly")}
-            >
-              Monthly
-              className={`px-6 py-2 rounded-xl border ${plan === "yearly" ? "bg-blue-600 text-white" : "bg-white text-gray-700"}`}
-              onClick={() => setPlan("yearly")}
-            >
-              Yearly (Save 25%)
-          </div>
-          <div className="bg-white shadow-md p-6 rounded-xl max-w-md mx-auto">
-            <h3 className="text-2xl font-bold mb-2">{plan === "monthly" ? "$49/month" : "$588/year"}</h3>
-            <p className="text-sm text-gray-600 mb-4">Unlimited projects, narration, motion AI, and support.</p>
-              Subscribe Now
-          </div>
-        </section>
-      </motion.div>
-    </main>
+      <main className="min-h-screen flex flex-col items-center justify-center px-4 py-16 text-center">
+        <h1 className="text-5xl font-bold mb-6">Welcome to My Simple App</h1>
+        <p className="text-lg text-gray-600 mb-10">A clean and professional layout with auth + billing</p>
+
+        <a
+          href="https://my-simple-app-w6ft-116hjg8ir-lordkyrios.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="group px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl hover:scale-105 hover:shadow-xl transition duration-300 ease-in-out">
+            Launch App
+          </button>
+        </a>
+      </main>
+
+      <Footer />
+    </>
   );
 }
